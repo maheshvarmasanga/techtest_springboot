@@ -40,7 +40,7 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(NoDataFoundException.class)
 	public ResponseEntity<Object> handleNodataFoundException(NoDataFoundException ex, WebRequest request) {
-
+	logger.info("Inside handleNoDataFoundException");
 		Map<String, Object> body = new LinkedHashMap<>();
 		body.put("timestamp", LocalDateTime.now());
 		body.put("message", "No employees found");
